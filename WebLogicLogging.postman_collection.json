@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebLogicLogging",
+		"_postman_id": "53bf3e2c-d3df-f2fd-28ee-81487e69ec5d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Log Message through WebLogicLoggerService",
+			"request": {
+				"url": "http://141.144.34.222:80/WebLogicLoggerService/resources/logger/log",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"logLevel\" : \"info\"\n\t,\"module\" : \"postman\"\n\t, \"message\" : \"hello from the other side\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Send bulk log messages to WebLogicLoggingService",
+			"request": {
+				"url": "http://141.144.34.222:80/WebLogicLoggerService/resources/logger/bulklog",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"logLevel\" : \"warn\"\n\t,\"module\" : \"postman exam\"\n\t, \"messages\" : [ {\"message\" : \"msg 11 in bulk\", \"logLevel\" : \"warn\"}, {\"message\" : \"msg 22 in bulk\", \"logLevel\" : \"debug\"}, {\"message\" : \"msg 3 in bulk\"}]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
